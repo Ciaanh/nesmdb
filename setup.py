@@ -17,7 +17,7 @@ def _build_vgm_play(build_temp, build_lib):
     made_build_temp = True
 
   # Download VGMPlay 0.40.8
-  print 'Cloning VGMPlay'
+  print ('Cloning VGMPlay')
   os.system("git clone https://github.com/vgmrips/vgmplay.git {}".format(os.path.join(build_temp, "vgmplay-latest")))
 
   vgmplay_dir = os.path.join(build_temp, 'vgmplay-latest', 'VGMPlay')
@@ -33,7 +33,7 @@ def _build_vgm_play(build_temp, build_lib):
     f.write(makefile)
 
   # Build
-  print 'Building VGMPlay'
+  print ('Building VGMPlay')
   command = 'make -C {} vgm2wav'.format(vgmplay_dir)
   res = subprocess.call(command.split())
   if res > 0:
